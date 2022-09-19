@@ -12,7 +12,7 @@ To illustrate the superior performance of neuromorphic computing, the following 
 Current             Quantum           TuringX
 Method              Method            Neuromorphic Chip
 -------------------------------------------------------
-O(n^100,000)         O(n50,000)        2.23s
+O(n^100,000)         O(n^50,000)        2.23s
 *Longer than        *Longer than
 the universe exits  the universe exists
 ```
