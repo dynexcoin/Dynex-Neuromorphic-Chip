@@ -1,6 +1,6 @@
 # TuringX-Neuromorphic-Chip
 
-Reference implementations and Verilog code for FPGAs of the TuringX Neuromorphic Chip.
+Reference implementations and Verilog code for FPGAs of the TuringX Neuromorphic Chip as described [here](https://turingx.org/turingx-neuromorphic-chip/).
 
 ## C++ Reference Implementation (CPU)
 
