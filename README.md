@@ -1,6 +1,6 @@
 # Dynex-Neuromorphic-Chip
 
-Reference implementations and Verilog code for FPGAs of the Dynex Neuromorphic Chip as described [on our website](https://dynexcoin.org/dynex-neuromorphic-chip/).
+Reference implementations of the Dynex Neuromorphic Chip as described [on our website](https://dynexcoin.org/dynex-neuromorphic-chip/).
 
 ## C++ Reference Implementation (CPU)
 
