@@ -53,6 +53,26 @@ g++ dynex.cc -o dynex -std=c++17 -Ofast -I /opt/homebrew/cellar/boost/1.78.0/inc
 ./dynex -i cnf/transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf
 ```
 
+### Benchmark Comparison 
+
+Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/]
+
+```
+PROBLEM INSTANCE                                                  Max.Walltime     Kissat_MAB-HyWalk    Dynex
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       no solution          57.13s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           2.83s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           8.71s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           9.76s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           9.17s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       no solution           1.76s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           9.60s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution          10.36s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution          10.94s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       no solution          10.29s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
+
+```
+
 ## CUDA Reference Implementation (GPU)
 
 File "dynex.cu" is a reference implementation of the neuromorphic circuit. It integrates the system of equations (ODE) derived from the circuit model on a GPU. The reference design solves the Boolean satisfiability problem (sometimes called propositional satisfiability problem and abbreviated SATISFIABILITY, SAT or B-SAT). A propositional logic formula, also called Boolean expression, is built from variables, operators AND (conjunction, also denoted by ∧), OR (disjunction, ∨), NOT (negation, ¬), and parentheses. A formula is said to be satisfiable if it can be made TRUE by assigning appropriate logical values (i.e. TRUE, FALSE) to its variables. The Boolean satisfiability problem (SAT) is, given a formula, to check whether it is satisfiable. This decision problem is of central importance in many areas of computer science, including theoretical computer science, complexity theory, algorithmics, cryptography and artificial intelligence. Please note that this reference implementation proves the mathematical model and is not as efficient as an implementation on a FPGA chip.
