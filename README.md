@@ -55,7 +55,7 @@ g++ dynex.cc -o dynex -std=c++17 -Ofast -I /opt/homebrew/cellar/boost/1.78.0/inc
 
 ### Benchmark Comparison 
 
-Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/](SC 2023)
+Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/]
 
 ```
 PROBLEM INSTANCE                                                  Max.Walltime     Kissat_MAB-HyWalk    Dynex
@@ -72,7 +72,7 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
 ```
 
-Comparison with YalSat, winner of the SAT Competition 2017 Random Track [https://github.com/arminbiere/yalsat](University of Freiburg)
+Comparison with YalSat, winner of the SAT Competition 2017 Random Track [https://github.com/arminbiere/yalsat]
 
 ```
 PROBLEM INSTANCE                                                  Max.Walltime     YalSat 1.0.1         Dynex
