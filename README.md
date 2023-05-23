@@ -55,7 +55,7 @@ g++ dynex.cc -o dynex -std=c++17 -Ofast -I /opt/homebrew/cellar/boost/1.78.0/inc
 
 ### Benchmark Comparison 
 
-Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/]
+Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/](SC 2023)
 
 ```
 PROBLEM INSTANCE                                                  Max.Walltime     Kissat_MAB-HyWalk    Dynex
@@ -71,7 +71,34 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       no solution          10.29s
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
 
+Comparison with YalSat, winner of the SAT Competition 2017 Random Track [https://github.com/arminbiere/yalsat](University of Freiburg)
+
 ```
+PROBLEM INSTANCE                                                  Max.Walltime     YalSat 1.0.1         Dynex
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       14.1s                57.13s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           2.83s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           8.71s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           9.76s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           9.17s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       no solution           1.76s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           9.60s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution          10.36s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution          10.94s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       62.36s               10.29s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
+
+```
+
+### Notes and Remarks
+
+- The Dynex Chip is not a physical produced chip, DynexSolve simulates them by integrating its equations of motion (ODE integration)
+Extrapolating the equations of motions from the chip design requires a number of variables / parameters to be introduced (as explained in the DynexSolve paper)
+
+- In the case of SAT problems, there are in total 6 parameters to be defined. These parameters depend on the underlying structure for a problem type. The reference implementation used in our example is applying tuned parameters for the problem type stemming from Barthel instances and may not be suitable / applicable out of the box for other problem types
+
+- Identifying the optimal parameters is an iterative tuning process which happens on the Dynex platform where a large number of GPUs are tuning in until they have identified the best values
+
+- With parameters tuned, TTS is optimised and applicable for every similar problem types, meaning problems of similar type can be solved even more efficient on the platform.
 
 ## CUDA Reference Implementation (GPU)
 
