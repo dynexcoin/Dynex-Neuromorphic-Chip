@@ -70,6 +70,7 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution          10.94s
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       no solution          10.29s
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
+```
 
 Comparison with YalSat, winner of the SAT Competition 2017 Random Track [https://github.com/arminbiere/yalsat](University of Freiburg)
 
@@ -86,7 +87,6 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution          10.94s
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       62.36s               10.29s
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
-
 ```
 
 ### Notes and Remarks
