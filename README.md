@@ -80,6 +80,23 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s
 ```
 
+Comparison with PalSat [https://github.com/arminbiere/yalsat] on 3 CPU cores (-t 3) and Dynex on 3 CPU cores (-w 3)
+
+```
+PROBLEM INSTANCE                                                  Max.Walltime     PalSat 3 Cores      Dynex 3 Cores
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       50.43s               41.32s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           1.57s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           7.67s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           7.38s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           8.49s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       28.56s                1.67s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           9.11s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution           7.33s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution           9.97s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       21.35s                9.35s
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          15.09s
+```
+
 ### Notes and Remarks
 
 - The Dynex Chip is not a physical produced chip, DynexSolve simulates them by integrating its equations of motion (ODE integration)
