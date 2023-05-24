@@ -8,6 +8,8 @@ File "dynex.cc" is a reference implementation of the neuromorphic circuit. It in
 
 To illustrate the performance of neuromorphic computing, the following example showcases an implementation of a constraint satisfaction problem, where a problem formulation with complexity O(n^100,000) is being solved using the Dynex Neuromorphic Chip. The problem consists of 100,000 unique variables. Existing methodologies based on current and Quantum technology (reducing the complexity with Shor’s algorithm to O(n^50,000) cannot solve this problem class efficiently today. The Dynex Neuromorphic Chip solves the problem in a few seconds because of its inherent parallelization, it’s long-range order and its capability to utilize instantons.
 
+This reference implementation proves the mathematical model and has not been optimised for speed and performance.
+
 ### Requirements:
 Please note that it is required to have the [Boost library](https://www.boost.org) (Version 1.74.0 or better) installed: 
 
