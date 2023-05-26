@@ -100,7 +100,7 @@ char            SOLUTION_FILE[256];
 char            TUNING_FILE[256];
 char            ASSIGNMENT_FILE[256];
 //--------------------------------------------------------------------------------------------------------------
-int THREAD_COUNT = 8;
+int THREAD_COUNT = 1; //8;
 volatile int running_threads = 0;
 //--------------------------------------------------------------------------------------------------------------
 // PRECISION OF ODE INTEGRATION
@@ -129,7 +129,7 @@ bool   massive         = false; // multiple runs, each with different initial Xs
 bool   constand_adaptive = true; // use adaptive timestep in ODE_CONSTANT_NOBOOST
 
 // Equations - constants:
-TFloat dmm_alpha      = TFloat(5.0);    // growth rate for long term memory Xl
+TFloat dmm_alpha      = TFloat(2.5);    // growth rate for long term memory Xl
 TFloat                * dmm_alpha_cm;   // alpha for each clause - used for heuristics
 TFloat dmm_beta       = TFloat(20.0);   // growth rate for short term memory Xs
 TFloat dmm_gamma      = TFloat(TFloat(25)/TFloat(100)); // TFloat(0.25);   // restriction for Cm in short term memory Xs
@@ -2251,7 +2251,7 @@ int main(int argc, char **argv) {
     "c          -f [0;1]     : APPLY BOUNDS AFTER EACH ODE STEP (DEFAULT: 1)\n"
     "c          -q [0;1]     : QUIET MODE; 0=OFF 1=ON (DEFAULT:0)\n"
     "c          -u [TFloat]  : WALL TIME TIMEOUT AFTER x s NO BETTER LOC FOUND (DEFAULT: INT_MAX)\n"
-    "c          -w [int]     : NUMBER OF PARALLEL THREADS (DEFAULT: 8)\n"
+    "c          -w [int]     : NUMBER OF PARALLEL THREADS (DEFAULT: 1)\n"
     "c          -e [0;1]     : LOAD partable.txt (DEFAULT: 0)\n"
     "c\n"
     "c          -c [TFloat]  : ALPHA (GROWTH RATE FOR LONG TERM MEMORY Xl)\n"
@@ -2660,8 +2660,8 @@ on_continue:
         //initial assignments:
         if (i<=2 && seed==0) {
             //special case: seed 0: all V zeros:
-            if (i==0) for (int j=0; j<n+m*2; j++) initial_assignments[i*(n+m*2)+j] = TFloat(0.0);
-            if (i==1) for (int j=0; j<n+m*2; j++) initial_assignments[i*(n+m*2)+j] = TFloat(1.0);
+            if (i==0) for (int j=0; j<n+m*2; j++) initial_assignments[i*(n+m*2)+j] = TFloat(1.0);
+            if (i==1) for (int j=0; j<n+m*2; j++) initial_assignments[i*(n+m*2)+j] = TFloat(0.0);
             if (i==2) for (int j=0; j<n+m*2; j++) initial_assignments[i*(n+m*2)+j] = TFloat(-1.0);
         } else {
             int set_seed = seed + (i*4096);
