@@ -82,21 +82,21 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution           6.22s (62 steps*)
 ```
 
-Comparison with PalSat [https://github.com/arminbiere/yalsat], a multii threaded solver, on 3 CPU cores (-t 3) and Dynex on 3 CPU cores (-w 3)
+Comparison with PalSat [https://github.com/arminbiere/yalsat], a multii threaded solver, on 3 CPU cores (command line option -t 3) and Dynex on 3 CPU cores (command line option -w 3)
 
 ```
 PROBLEM INSTANCE                                                  Max.Walltime     PalSat 3 Cores      Dynex 3 Cores
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       50.43s (16M flips)   41.32s (183 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           1.57s (15 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           7.67s (42 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           7.38s (50 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           5.05s (47 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       28.56s (28M flips)    1.67s (15 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           5.50s (47 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution           4.54s (43 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution           6.28s (50 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       21.35s (20M flips)    5.87s (55 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution           9.20s (62 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       50.43s (16M flips)   14.83s (98 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           1.08s (14 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           5.83s (52 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           7.72s (63 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           6.09s (57 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       28.56s (28M flips)    1.31s (18 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           6.08s (56 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution           5.11s (48 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution           6.07s (57 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       21.35s (20M flips)    6.60s (69 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution           8.36s (62 steps*)
 ```
 
 PalSat is a very efficient parallel implementation and has been designed to achieve high computational speed. It requires PalSat 16-28 million flips (=computing operations) for finding solutions. 
