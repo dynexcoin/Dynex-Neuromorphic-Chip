@@ -48,21 +48,21 @@ g++ dynex.cc -o dynex -std=c++17 -Ofast -I /opt/homebrew/cellar/boost/1.78.0/inc
 
 ### Benchmark Comparison 
 
-Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/]
+Comparison with Kissat_MAB-HyWalk, winner of the SAT Competition 2023 [http://www.satcompetition.org/], a single threaded solver.
 
 ```
-PROBLEM INSTANCE                                                  Max.Walltime     Kissat_MAB-HyWalk    Dynex 8 Cores
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       no solution          57.13s (183 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           2.83s (15 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           8.71s (42 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           9.76s (50 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           9.17s (47 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       no solution           1.76s (15 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           9.60s (47 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution          10.36s (43 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution          10.94s (50 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       no solution          10.29s (55 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s (62 steps*)
+PROBLEM INSTANCE                                                  Max.Walltime     Kissat_MAB-HyWalk         Dynex 1 Core
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       no solution          10.67s (98 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution          13.90s (138 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution          17.00s (159 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution          15.29s (142 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution          16.61s (149 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       no solution           0.96s (18 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution          15.32s (138 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution          15.05s (138 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution           4.66s (57 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       no solution          17.20s (166 steps*)
+transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution           6.22s (62 steps*)
 ```
 
 Comparison with YalSat, winner of the SAT Competition 2017 Random Track [https://github.com/arminbiere/yalsat], a single threaded solver.
@@ -80,23 +80,6 @@ transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes    
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution           4.66s (57 steps*)
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       62.36s (104M flips)  17.20s (166 steps*)
 transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution           6.22s (62 steps*)
-```
-
-And the same in comparison with 8 cores on Dynex:
-
-```
-PROBLEM INSTANCE                                                  Max.Walltime     YalSat 1.0.1         Dynex 8 Cores
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_001.cnf    15 minutes       14.1s (20M flips)    57.13s (183 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_002.cnf    15 minutes       no solution           2.83s (15 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_004.cnf    15 minutes       no solution           8.71s (42 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_005.cnf    15 minutes       no solution           9.76s (50 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_007.cnf    15 minutes       no solution           9.17s (47 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_008.cnf    15 minutes       no solution           1.76s (15 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_014.cnf    15 minutes       no solution           9.60s (47 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_016.cnf    15 minutes       no solution          10.36s (43 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_018.cnf    15 minutes       no solution          10.94s (50 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_020.cnf    15 minutes       62.36s (104M flips)  10.29s (55 steps*)
-transformed_barthel_n_100000_r_8.000_p0_0.080_instance_024.cnf    15 minutes       no solution          17.73s (62 steps*)
 ```
 
 Comparison with PalSat [https://github.com/arminbiere/yalsat], a multii threaded solver, on 3 CPU cores (-t 3) and Dynex on 3 CPU cores (-w 3)
